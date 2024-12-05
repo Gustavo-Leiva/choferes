@@ -1,0 +1,61 @@
+<!-- <p>informes-vehiculos works!</p> -->
+ <app-header></app-header>
+ <div class="contenedor">
+    <h1>Generar Informe de Vehículos</h1>
+    <div class="contenedor-botones">
+      <button class="btn-generar" (click)="generarPDFVehiculos()">Descargar PDF</button>
+      <button class="btn-generar" (click)="generarCSVVehiculos()">Descargar CSV</button>
+    </div>
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Cantidad de Ruedas</th>
+          <th>Capacidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.nombre }}</td>
+          <td>{{ vehiculo.tipo }}</td>
+          <td>{{ vehiculo.cantidadRuedas}}</td>
+          <td>{{ vehiculo.capacidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <div class="contenedor">
+    <h1>Generar Informe de Choferes</h1>
+    <div class="contenedor-botones">
+     <button class="btn-generar" (click)="generarPDFChoferes()">Descargar PDF</button>
+     <button class="btn-generar" (click)="generarCSVChoferes()">Descargar CSV</button>
+    </div>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>DNI</th>
+          <th>Edad</th>
+          <th>Numero de licencia</th>
+          <th>Licencia</th>
+          <th>Pais Origen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let chofer of choferes">
+          <td>{{ chofer.nombre }}</td>
+          <td>{{ chofer.dni }}</td>
+          <td>{{ chofer.edad }}</td>
+          <td>{{ chofer.nrolicencia }}</td>
+          <td>{{ chofer.licencia }}</td>
+          <td>{{ chofer.paisOrigen }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

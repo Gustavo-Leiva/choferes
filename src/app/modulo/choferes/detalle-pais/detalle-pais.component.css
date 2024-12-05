@@ -1,0 +1,38 @@
+.detalle-pais-container {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px; /* Reduce el padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Reduce la sombra para un efecto más ligero */
+    margin: 15px 0; /* Reduce el margen */
+    max-width: 300px; /* Limita el ancho máximo del cuadro */
+    margin-left: auto; /* Centra el cuadro horizontalmente */
+    margin-right: auto; /* Centra el cuadro horizontalmente */
+  }
+  
+  .detalle-titulo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px; /* Reduce el tamaño de la fuente */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px; /* Reduce el margen inferior */
+    text-align: center;
+    color: #4a90e2;
+      font-size: 1rem;
+      margin-bottom: 10px;
+  }
+  
+  .detalle-info {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px; /* Reduce el tamaño de la fuente */
+    color: #555;
+    line-height: 1.4; /* Ajusta el interlineado para mayor compacidad */
+  }
+  
+  .bandera-img {
+    width: 100%; /* Mantiene el tamaño automático */
+    max-width: 100px; /* Tamaño máximo para la imagen (más grande) */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 5px; /* Bordes redondeados */
+    display: block; /* Centra la imagen */
+    margin: 5px auto; /* Espaciado reducido arriba y abajo */
+}

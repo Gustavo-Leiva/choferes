@@ -1,0 +1,62 @@
+<!-- <p>bienvenida works!</p> -->
+
+<body>
+    
+   
+    <!-- Esta parte funciona -->
+    
+    <!-- <nav class="navbar"> -->
+        <!-- Sección izquierda de la barra de navegación -->
+        <!-- <div class="navbar-left"> -->
+            <!-- <img src="assets/imagenes/logo.jpg" alt="Producto Icon" class="navbar-icon"> -->
+            <!-- <span class="navbar-title">Gestion de choferes</span>
+        </div> -->
+    
+        <!-- Menú principal visible en pantallas grandes -->
+        <!-- <div class="navbar-center">
+            <a href="/bienvenida" class="nav-link">Home</a>
+             <div class="dropdown">
+                <button class="dropdown-toggle">Choferes</button>
+                <div class="dropdown-menu">
+                    <a (click)="NavegarChoferes('alta-chofer')" class="dropdown-item">Alta Choferes</a>
+                    <a (click)="NavegarChoferes('chofer-pais')" class="dropdown-item">Listar Choferes</a>
+                     
+                
+                 </div>
+            </div>
+            <div class="dropdown">
+                <button *ngIf="authService.isAdmin()" class="dropdown-toggle">Vehiculos</button>
+                <div class="dropdown-menu">
+                    <a (click)="NavegarChoferes('vehiculos')" class="dropdown-item">Listar vehículos</a>
+                </div>
+            </div>
+        </div>  -->
+    
+        <!-- Sección derecha de la barra de navegación -->
+        <!-- <div class="navbar-right">
+            <ng-container *ngIf="authService.userActive; else loggedOut">
+                <span class="user-email">{{ authService.userActive.email }}</span>
+                <a (click)="logout()" class="nav-link logout">Cerrar Sesión</a>
+            </ng-container>
+            <ng-template #loggedOut>
+                <a href="/login" class="nav-link">Iniciar Sesión</a>
+                <a href="/registro" class="nav-link">Registrarse</a>
+            </ng-template>
+        </div>
+    </nav> -->
+    
+    <app-header></app-header>
+    
+    <div class="central">
+        <div class="div-texto">
+            <h1 class="texto">Usuario: {{usuario}}</h1>
+        </div>
+        <div class="div-texto">
+            <h1 class="texto">Cantidad de repositorios públicos: {{cantidadRepos}}</h1>
+        </div>
+        <img src="{{imagen}}" alt="Imagen del usuario" class="imagen-usuario">
+    </div>
+    
+    
+    </body>
+

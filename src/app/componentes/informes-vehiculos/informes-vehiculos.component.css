@@ -1,0 +1,91 @@
+.contenedor {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .contenedor-botones {
+    display: flex;
+    gap: 10px; /* Espaciado entre botones */
+  }
+  
+  .btn-generar {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-generar:hover {
+    background-color: #0056b3;
+  }
+
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .btn-generar {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-generar:hover {
+    background-color: #45a049;
+  }
+  
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .tabla thead tr {
+    background-color: #f4f4f4;
+    color: #333333;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .tabla th, .tabla td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+  }
+  
+  .tabla tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tabla tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tabla td {
+    color: #555555;
+  }
+  
+  .tabla th {
+    color: #666666;
+    font-size: 1rem;
+  }
+  

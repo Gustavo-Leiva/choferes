@@ -1,0 +1,62 @@
+
+<p class="alta-vehiculo">Alta vehiculo</p>
+
+<div class="alta-vehiculo-container">
+  <form [formGroup]="vehiculoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre del vehículo:</label>
+      <input id="nombre" formControlName="nombre" type="text" class="input-field" />
+      <div *ngIf="vehiculoForm.get('nombre')?.invalid && vehiculoForm.get('nombre')?.touched" class="error-msg">
+        <small>Nombre es requerido y solo puede contener letras.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" formControlName="tipo" class="input-field">
+        <option value="">Seleccione un tipo</option>
+        <option value="terrestre">Terrestre</option>
+        <option value="aereo">Aéreo</option>
+        <option value="maritimo">Marítimo</option>
+      </select>
+      <div *ngIf="vehiculoForm.get('tipo')?.invalid && vehiculoForm.get('tipo')?.touched" class="error-msg">
+        <small>El tipo es requerido.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ruedas">Cantidad de ruedas:</label>
+      <input id="ruedas" formControlName="cantidadRuedas" type="number" class="input-field" />
+      <div *ngIf="vehiculoForm.get('cantidadRuedas')?.invalid && vehiculoForm.get('cantidadRuedas')?.touched" class="error-msg">
+        <small>La cantidad máxima de ruedas es 6.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="capacidad">Capacidad promedio:</label>
+      <input id="capacidad" formControlName="capacidad" type="number" class="input-field" />
+      <div *ngIf="vehiculoForm.get('capacidad')?.invalid && vehiculoForm.get('capacidad')?.touched" class="error-msg">
+        <small>La capacidad debe estar entre 2 y 100 pasajeros.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="vehiculoForm.invalid" class="btn-crear">Crear</button>
+  </form>
+</div>
+
+<!-- Overlay del spinner que aparece en el centro -->
+   <div *ngIf="isLoading" class="spinner-overlay">
+      <div class="spinner"></div>
+    </div>
+    
+    <!-- Mensaje de confirmación que aparece después de enviar -->
+     <div *ngIf="completed" class="confirmation-message" >
+      <button class="close-button" (click)="closeMessage()">✖</button>
+      <p>😊 Transporte dado de alta satisfactoriamente. ¡Carga terminada! 😊</p>
+    </div>
+  
+    <p *ngIf="submitted && vehiculoForm.invalid" class="error-message">
+      Por favor completa todos los campos obligatorios.
+    </p>
+  
+

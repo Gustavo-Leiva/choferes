@@ -1,0 +1,124 @@
+/* Estilo general para el contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 15px; /* Espacio entre los botones */
+}
+
+.button-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-box:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al hacer hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-elem {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 12px;
+  transform: rotate(180deg);
+  fill: #ffffff;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.button-elem:hover {
+  fill: #00bcd4;
+  transform: rotate(180deg) scale(1.1);
+}
+
+
+/* Hacemos que el jumbotron sea scrollable */
+.jumbotron {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 200px; /* Altura fija para la lista */
+  overflow-y: auto; /* Habilitar scroll vertical */
+}
+
+/* Contenedor para los detalles */
+.details-container {
+  display: flex;
+  justify-content: space-between; /* Detalles del producto a la izquierda, país a la derecha */
+  gap: 20px; /* Espacio entre las dos columnas */
+}
+
+/* Estilo del background (detalle del producto) */
+.background {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.background:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+/* Estilo del borders (detalle del país) */
+.borders {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.borders:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+/* Títulos */
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column; /* Los elementos se apilan en pantallas pequeñas */
+  }
+
+  .jumbotron {
+    height: 150px; /* Reducimos la altura en pantallas pequeñas */
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #4a90e2;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}

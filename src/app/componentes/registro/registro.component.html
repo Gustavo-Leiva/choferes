@@ -1,0 +1,125 @@
+<!-- <p>registro works!</p> -->
+
+<app-header></app-header>
+<!-- <body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Bienvenido</h1>
+            <p>¡Registra tus credenciales para iniciar!</p>
+
+            <form (ngSubmit)="Register()">
+                <div class="form-group">
+                    <!-- <label for="email">Usuario (Email):</label> -->
+                    <!-- <input id="email" [(ngModel)]="newUserMail" name="email" type="email" required  placeholder="Usuario" />
+                </div> -->
+
+                <!-- <div class="form-group"> -->
+                    <!-- <label for="password">Clave:</label> -->
+                    <!-- <input id="password" [(ngModel)]="newUserPWD" name="password" type="password" required  placeholder="Contraseña" />
+                </div> -->
+
+                <!-- <button type="submit" class="btn">Registrarse</button>
+            </form> -->
+            <!-- Aquí se muestra el mensaje de error si flagError es true -->
+            <!-- <div *ngIf="flagError" class="error-message">
+                {{ msjError }}
+            </div> -->
+            <!-- Aquí se muestra el mensaje de éxito si msjExito tiene contenido -->
+            <!-- <div *ngIf="msjExito" class="success-message">
+                {{ msjExito }}
+            </div>
+        </div>
+    </div>
+</body> -->
+
+<!-- registro.component.html este registro para acepta condiciones -->
+<app-header></app-header>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Bienvenido</h1>
+      <p>¡Registra tus credenciales para iniciar!</p>
+
+      <form (ngSubmit)="Register()" #registroForm="ngForm">
+        <!-- Nombre -->
+        <div class="form-group">
+          <input 
+            id="nombre" 
+            [(ngModel)]="newUserNombre" 
+            name="nombre" 
+            type="text" 
+            required 
+            placeholder="Nombre" 
+            #nombre="ngModel" 
+            pattern="[a-zA-Z]+"
+          />
+          <div *ngIf="nombre.invalid && nombre.touched" class="error-message">
+            El nombre es obligatorio y solo puede contener letras.
+          </div>
+        </div>
+
+        <!-- Apellido -->
+        <div class="form-group">
+          <input 
+            id="apellido" 
+            [(ngModel)]="newUserApellido" 
+            name="apellido" 
+            type="text" 
+            required 
+            placeholder="Apellido" 
+            #apellido="ngModel" 
+            pattern="[a-zA-Z]+"
+          />
+          <div *ngIf="apellido.invalid && apellido.touched" class="error-message">
+            El apellido es obligatorio y solo puede contener letras.
+          </div>
+        </div>
+
+        <!-- Edad -->
+        <div class="form-group">
+          <input 
+            id="edad" 
+            [(ngModel)]="newUserEdad" 
+            name="edad" 
+            type="number" 
+            required 
+            min="1" 
+            placeholder="Edad" 
+            #edad="ngModel"
+          />
+          <div *ngIf="edad.invalid && edad.touched" class="error-message">
+            La edad es obligatoria y debe ser mayor a 0.
+          </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-group">
+          <input 
+            id="password" 
+            [(ngModel)]="newUserPWD" 
+            name="password" 
+            type="password" 
+            required 
+            placeholder="Contraseña" 
+            minlength="6" 
+            #password="ngModel"
+          />
+          <div *ngIf="password.invalid && password.touched" class="error-message">
+            La contraseña es obligatoria y debe tener al menos 6 caracteres.
+          </div>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn" [disabled]="registroForm.invalid">Registrarse</button>
+      </form>
+
+      <!-- Mensajes de error o éxito -->
+      <div *ngIf="flagError" class="error-message">
+        {{ msjError }}
+      </div>
+      <div *ngIf="msjExito" class="success-message">
+        {{ msjExito }}
+      </div>
+    </div>
+  </div>
+</body>

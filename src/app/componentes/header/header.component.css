@@ -1,0 +1,170 @@
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2C3E50; /* Fondo gris azulado moderno */
+    color: #ECF0F1; /* Blanco cálido para los textos */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Asegura que el padding no se desborde */
+    flex-wrap: wrap; /* Elementos se mueven en pantallas pequeñas */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+
+}
+
+/* Contenedor de la izquierda, centro y derecha */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left {
+    flex: 1;
+}
+
+.navbar-right {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.navbar-center {
+    flex: 2;
+    justify-content: center;
+}
+
+/* Estilo del icono */
+.navbar-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+/* Título de la barra de navegación */
+.navbar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1.2rem;
+    white-space: nowrap; /* Evita el salto de línea */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.nav-link:hover {
+    background-color: #444; /* Efecto hover */
+}
+
+/* Estilos para la sección central */
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff; /* Fondo blanco para un look limpio */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Centrando el contenedor */
+    transition: transform 0.3s; /* Suave animación al pasar el ratón */
+}
+
+/* Efecto de transformación en hover */
+.central:hover {
+    transform: translateY(-5px); /* Eleva el contenedor al pasar el ratón */
+}
+
+/* Estilo para el texto */
+.div-texto {
+    margin: 15px 0; /* Espaciado entre elementos */
+}
+
+.texto {
+    font-size: 26px; /* Tamaño de fuente más grande */
+    color: #333; /* Color oscuro para el texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    font-weight: 600; /* Negrita para el título */
+}
+
+/* Estilo para la imagen del usuario */
+.imagen-usuario {
+    width: 120px; /* Tamaño fijo para la imagen */
+    height: 120px; /* Mantener proporciones */
+    border-radius: 50%; /* Imagen circular */
+    margin-top: 20px; /* Espaciado superior */
+    border: 4px solid #007bff; /* Borde azul elegante */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil para la imagen */
+    transition: transform 0.3s; /* Animación para la imagen */
+}
+
+/* Efecto de transformación en hover para la imagen */
+.imagen-usuario:hover {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen al pasar el ratón */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background-color: #2C3E50;
+    color: #fff;    
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    transition: background-color 0.3s; /* Transición suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+
+}
+
+.dropdown-toggle:hover {
+    background-color: #444; /* Efecto hover en el botón dropdown */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

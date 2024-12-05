@@ -1,0 +1,51 @@
+
+
+<p class="baja-vehiculo">Baja Vehículo</p>
+
+<div class="eliminar-vehiculo-container">
+<form [formGroup]="bajaForm" (ngSubmit)="bajarVehiculo()">
+    <div class="form-group">
+      <label>Nombre del vehículo:</label>
+      <input formControlName="nombre" type="text" class="input-field" [value]="vehiculo?.nombre" />
+    </div>
+  
+    <div class="form-group">
+      <label>Tipo:</label>
+      <input formControlName="tipo" type="text" class="input-field" [value]="vehiculo?.tipo" />
+    </div>
+  
+    <div class="form-group">
+      <label>Cantidad de ruedas:</label>
+      <input formControlName="cantidadRuedas" type="number" class="input-field" [value]="vehiculo?.cantidadRuedas" />
+    </div>
+  
+    <div class="form-group">
+      <label>Capacidad:</label>
+      <input formControlName="capacidad" type="number" class="input-field" [value]="vehiculo?.capacidad"/>
+    </div>
+  
+    <div class="form-group confirmacion">
+      <label for="confirmarBaja">¿Confirma la baja del vehículo?</label>
+      <input id="confirmarBaja" type="checkbox" formControlName="confirmarBaja" />
+    </div>
+  
+    <button type="submit" [disabled]="bajaForm.invalid" class="btn-baja">Eliminar Vehículo</button>
+  </form>
+
+  
+<!-- Overlay del spinner que aparece en el centro -->
+<div *ngIf="isLoading" class="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+
+<!-- Mensaje de confirmación que aparece después de enviar -->
+ <div *ngIf="completed" class="confirmation-message" >
+  <button class="close-button" (click)="closeMessage()">✖</button>
+  <p>😊 Transporte eliminado satisfactoriamente! 😊</p>
+</div>
+
+<p *ngIf="submitted && bajaForm.invalid" class="error-message">
+  Por favor completa todos los campos obligatorios.
+</p>
+  
+</div>

@@ -1,0 +1,12 @@
+<!-- <p>detalle-pais works!</p> -->
+
+<div *ngIf="pais" class="detalle-pais-container">
+    <h2 class="detalle-titulo">Detalle del País</h2>
+    
+    <div class="detalle-info">
+      <p><strong>Nombre:</strong> <span>{{ pais.nombre }}</span></p>
+      <!-- <p><strong>Código:</strong> <span>{{ pais.codigo }}</span></p> -->
+      <p><strong>Continente:</strong> <span>{{ pais.continente }}</span></p>
+      <img [src]="pais.banderaUrl" alt="{{ pais.nombre }}" class="bandera-img" />
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+
+  <app-header></app-header>
+  <body>
+   
+  
+    <!-- vehiculo.component.html -->
+    <div class="vehiculo-container">
+  
+      
+      <!-- Listado de vehículos -->
+      <div class="listado">
+        <!-- <app-tabla-vehiculos></app-tabla-vehiculos> -->
+         <!-- Escuchar el evento vehiculoSeleccionado -->
+  <app-tabla-vehiculos 
+    (vehiculoSeleccionado)="vehiculoSeleccionado($event)"    >
+ </app-tabla-vehiculos>
+      </div>
+  
+      <!-- Sección para alta, modificación y baja -->
+      <div class="acciones-vehiculo">
+        <div class="alta">
+          <app-alta-vehiculo></app-alta-vehiculo>
+        </div>
+        <div class="modificacion">
+         <!-- Enviar el vehículo seleccionado como input al componente de modificación -->
+        <app-modificacion-vehiculo 
+        [vehiculo]="vehiculo"
+       >
+        </app-modificacion-vehiculo>
+        </div>
+        <div class="baja">
+          <!-- <app-baja-vehiculo></app-baja-vehiculo> -->
+            <!-- Enviar el vehículo seleccionado al componente de baja -->
+       <!-- <app-baja-vehiculo [vehiculo]="vehiculo"></app-baja-vehiculo> -->
+       <app-baja-vehiculo [vehiculo]="vehiculo" (vehiculoEliminado)="onVehiculoEliminado()"></app-baja-vehiculo>
+
+        </div>
+      </div>
+  
+    </div>
+  </body>
+  

@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<!-- <body> -->
+  
+
+<h2 class="mb-4 text-center">Listado de Choferes</h2>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12">
+        
+        <!-- Título de las columnas -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Dni</th>
+                <th scope="col">Edad</th>
+                <th scope="col">licencia</th>
+                <th scope="col">nro licencia</th>
+                <th scope="col">Pais Origen</th>
+                <th scope="col">Bandera</th> <!-- Nueva columna para la bandera -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let chofer of choferes" (click)="seleccionarChofer(chofer)">
+                <td>{{ chofer.nombre }}</td>
+                <td>{{ chofer.dni }}</td>
+                <td>{{ chofer.edad }}</td>
+                <td>{{ chofer.licencia }}</td>
+                <td>{{ chofer.nrolicencia }}</td>
+                <td>{{ chofer.paisOrigen }}</td>
+                <td>
+                  <img [src]="getBanderaUrl(chofer.paisOrigen)" 
+                       alt="Bandera de {{ chofer.paisOrigen }}" 
+                       class="bandera-img" 
+                       style="width: 30px; height: auto;" /> <!-- Ajustar tamaño -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <div *ngIf="choferes.length === 0" class="text-center mt-4">
+          <p>No hay choferes disponibles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- </body> -->

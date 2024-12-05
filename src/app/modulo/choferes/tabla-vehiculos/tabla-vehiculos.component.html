@@ -1,0 +1,28 @@
+<!-- <p>tabla-vehiculos works!</p> -->
+
+<h3 class="titulo-listado">Listado de Vehículos</h3>
+
+<table class="table-vehiculos">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Cantidad de Ruedas</th>
+      <th>Capacidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehiculo of vehiculos" (click)="seleccionarVehiculo(vehiculo)">
+    <!-- <tr *ngFor="let vehiculo of vehiculos"> -->
+      <td>{{ vehiculo.nombre }}</td>
+      <td>{{ vehiculo.tipo }}</td>
+      <td>{{ vehiculo.cantidadRuedas }}</td>
+      <td>{{ vehiculo.capacidad }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- En caso de que no haya vehículos -->
+<div *ngIf="vehiculos.length === 0" class="no-vehiculos">
+  <p>No hay vehículos registrados.</p>
+</div>

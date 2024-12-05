@@ -1,0 +1,75 @@
+/* Estilo para el título */
+.titulo-listado {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+  }
+  
+  /* Estilo para la tabla */
+  .table-vehiculos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1em;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado de la tabla */
+  .table-vehiculos thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .table-vehiculos thead th {
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+  }
+  
+  /* Cuerpo de la tabla */
+  .table-vehiculos tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .table-vehiculos tbody tr:nth-of-type(even) {
+    background-color: #f4f4f4;
+  }
+  
+  .table-vehiculos tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff;
+  }
+  
+  /* Celdas del cuerpo de la tabla */
+  .table-vehiculos tbody td {
+    padding: 15px 20px;
+    color: #555;
+  }
+  
+  /* Hover en filas */
+  .table-vehiculos tbody tr:hover {
+    background-color: #eaf2fd;
+    cursor: pointer;
+  }
+  
+  /* Mensaje cuando no hay vehículos */
+  .no-vehiculos p {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #666;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  

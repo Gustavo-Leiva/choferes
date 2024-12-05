@@ -1,0 +1,85 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 15px; /* Espacio entre los botones */
+  }
+  
+  .button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .button-box:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-elem {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 12px;
+    transform: rotate(180deg);
+    fill: #ffffff;
+    transition: fill 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button-elem:hover {
+    fill: #00bcd4;
+    transform: rotate(180deg) scale(1.1);
+  }
+  
+
+/* Contenedor principal */
+.vehiculo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Sección de listado de vehículos, que se extiende a lo largo de la pantalla */
+.listado {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Contenedor de alta, modificación y baja en columnas uno al lado del otro */
+.acciones-vehiculo {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Estilos individuales para cada sección (alta, modificación, baja) */
+.alta, .modificacion, .baja {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  max-width: 30%;
+}
+
+/* Asegura que todo sea responsive */
+@media (max-width: 768px) {
+  .acciones-vehiculo {
+    flex-direction: column;
+  }
+}
+
+  

@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f9f9f9, #e0f7fa);
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .login-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-box h1 {
+    font-size: 22px;
+    color: #00796b;
+    margin-bottom: 15px;
+  }
+  
+  .login-box p {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  input[type="email"], 
+  input[type="checkbox"] + label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  input[type="email"] {
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input[type="email"]:focus {
+    border-color: #00796b;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #757575;
+  }
+  
+  label a {
+    color: #00796b;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  
+  label a:hover {
+    text-decoration: underline;
+  }
+  
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #004d40;
+  }
+  
+  .error-message {
+    font-size: 12px;
+    color: #d32f2f;
+    margin-top: 5px;
+  }
+  
+  .success-message {
+    font-size: 12px;
+    color: #388e3c;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 480px) {
+    .login-box {
+      padding: 15px;
+    }
+  
+    .btn {
+      font-size: 14px;
+    }
+  }
+  
