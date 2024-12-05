@@ -1,13 +1,79 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
+
 <body>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <h1>Acepta los Términos y Condiciones</h1>
+        <p>Por favor, revisa y acepta los términos para continuar.</p>
+  
+        <form (ngSubmit)="acceptTerms()" #termsForm="ngForm">
+          <!-- Edad -->
+          <div class="form-group">
+            <input
+              id="edad"
+              [(ngModel)]="userAge"
+              name="edad"
+              type="number"
+              placeholder="Ingresa tu edad"
+              required
+              min="18"
+              max="65"
+              #edad="ngModel"
+            />
+            <div *ngIf="edad.invalid && edad.touched" class="error-message">
+              Debes ingresar una edad válida (18-65 años).
+            </div>
+          </div>
+  
+          <!-- Aceptar términos -->
+          <div class="form-group">
+            <label for="terms">
+              <input
+                type="checkbox"
+                id="terms"
+                [(ngModel)]="acceptedTerms"
+                name="terms"
+                required
+              />
+              Acepto los <a href="#">términos y condiciones</a>
+            </label>
+            <div *ngIf="!acceptedTerms && termsForm.touched" class="error-message">
+              Debes aceptar los términos y condiciones.
+            </div>
+          </div>
+  
+          <!-- Botón de envío -->
+          <button type="submit" class="btn" [disabled]="termsForm.invalid">
+            Aceptar
+          </button>
+        </form>
+  
+        <!-- Mensajes de error o éxito -->
+        <div *ngIf="flagError" class="error-message">
+          {{ msjError }}
+        </div>
+        <div *ngIf="msjExito" class="success-message">
+          {{ msjExito }}
+        </div>
+      </div>
+    </div>
+  </body>
+  
+
+
+
+
+
+<!-- <body>
   <div class="login-container">
     <div class="login-box">
       <h1>Acepta los Términos y Condiciones</h1>
       <p>Por favor, revisa y acepta los términos para continuar.</p>
 
-      <form (ngSubmit)="acceptTerms()" #termsForm="ngForm">
+      <form (ngSubmit)="acceptTerms()" #termsForm="ngForm"> -->
         <!-- Correo Electrónico -->
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input 
             id="email" 
             [(ngModel)]="userEmail" 
@@ -21,10 +87,10 @@
           <div *ngIf="email.invalid && email.touched" class="error-message">
             El correo electrónico es inválido.
           </div>
-        </div>
+        </div> -->
 
         <!-- Aceptar términos -->
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="terms">
             <input 
               type="checkbox" 
@@ -38,14 +104,14 @@
           <div *ngIf="!acceptedTerms && termsForm.touched" class="error-message">
             Debes aceptar los términos y condiciones.
           </div>
-        </div>
+        </div> -->
 
         <!-- Botón de envío -->
-        <button type="submit" class="btn" [disabled]="termsForm.invalid">Aceptar</button>
-      </form>
+        <!-- <button type="submit" class="btn" [disabled]="termsForm.invalid">Aceptar</button>
+      </form> -->
 
       <!-- Mensajes de error o éxito -->
-      <div *ngIf="flagError" class="error-message">
+      <!-- <div *ngIf="flagError" class="error-message">
         {{ msjError }}
       </div>
       <div *ngIf="msjExito" class="success-message">
@@ -53,5 +119,5 @@
       </div>
     </div>
   </div>
-</body>
+</body> -->
 

@@ -1,7 +1,7 @@
 <!-- <p>registro works!</p> -->
 
 <app-header></app-header>
-<!-- <body>
+ <!-- <body>
     <div class="login-container">
         <div class="login-box">
             <h1>Bienvenido</h1>
@@ -9,91 +9,60 @@
 
             <form (ngSubmit)="Register()">
                 <div class="form-group">
-                    <!-- <label for="email">Usuario (Email):</label> -->
-                    <!-- <input id="email" [(ngModel)]="newUserMail" name="email" type="email" required  placeholder="Usuario" />
-                </div> -->
+                    <label for="email">Usuario (Email):</label> 
+                    <input id="email" [(ngModel)]="newUserMail" name="email" type="email" required  placeholder="Usuario" />
+                </div> 
 
-                <!-- <div class="form-group"> -->
-                    <!-- <label for="password">Clave:</label> -->
-                    <!-- <input id="password" [(ngModel)]="newUserPWD" name="password" type="password" required  placeholder="Contraseña" />
-                </div> -->
+                 <div class="form-group"> 
+                     <label for="password">Clave:</label> 
+                    <input id="password" [(ngModel)]="newUserPWD" name="password" type="password" required  placeholder="Contraseña" />
+                </div> 
 
-                <!-- <button type="submit" class="btn">Registrarse</button>
-            </form> -->
-            <!-- Aquí se muestra el mensaje de error si flagError es true -->
-            <!-- <div *ngIf="flagError" class="error-message">
+               <button type="submit" class="btn">Registrarse</button>
+            </form>
+            Aquí se muestra el mensaje de error si flagError es true
+            <div *ngIf="flagError" class="error-message">
                 {{ msjError }}
-            </div> -->
-            <!-- Aquí se muestra el mensaje de éxito si msjExito tiene contenido -->
-            <!-- <div *ngIf="msjExito" class="success-message">
+            </div> 
+            Aquí se muestra el mensaje de éxito si msjExito tiene contenido
+            <div *ngIf="msjExito" class="success-message">
                 {{ msjExito }}
             </div>
-        </div>
+         </div>
     </div>
-</body> -->
+</body>  --> 
 
 <!-- registro.component.html este registro para acepta condiciones -->
 <app-header></app-header>
-<body>
+
+
+
+ <body>
   <div class="login-container">
     <div class="login-box">
       <h1>Bienvenido</h1>
       <p>¡Registra tus credenciales para iniciar!</p>
 
       <form (ngSubmit)="Register()" #registroForm="ngForm">
-        <!-- Nombre -->
-        <div class="form-group">
+       
+         <!-- Email -->
+         <div class="form-group">
           <input 
-            id="nombre" 
-            [(ngModel)]="newUserNombre" 
-            name="nombre" 
-            type="text" 
+            id="email" 
+            [(ngModel)]="newUserMail" 
+            name="email" 
+            type="email" 
             required 
-            placeholder="Nombre" 
-            #nombre="ngModel" 
-            pattern="[a-zA-Z]+"
+            placeholder="Correo Electrónico" 
+            #email="ngModel"
           />
-          <div *ngIf="nombre.invalid && nombre.touched" class="error-message">
-            El nombre es obligatorio y solo puede contener letras.
-          </div>
-        </div>
-
-        <!-- Apellido -->
-        <div class="form-group">
-          <input 
-            id="apellido" 
-            [(ngModel)]="newUserApellido" 
-            name="apellido" 
-            type="text" 
-            required 
-            placeholder="Apellido" 
-            #apellido="ngModel" 
-            pattern="[a-zA-Z]+"
-          />
-          <div *ngIf="apellido.invalid && apellido.touched" class="error-message">
-            El apellido es obligatorio y solo puede contener letras.
-          </div>
-        </div>
-
-        <!-- Edad -->
-        <div class="form-group">
-          <input 
-            id="edad" 
-            [(ngModel)]="newUserEdad" 
-            name="edad" 
-            type="number" 
-            required 
-            min="1" 
-            placeholder="Edad" 
-            #edad="ngModel"
-          />
-          <div *ngIf="edad.invalid && edad.touched" class="error-message">
-            La edad es obligatoria y debe ser mayor a 0.
+          <div *ngIf="email.invalid && email.touched" class="error-message">
+            El correo electrónico es obligatorio y debe tener un formato válido.
           </div>
         </div>
 
         <!-- Contraseña -->
-        <div class="form-group">
+         <div class="form-group">
           <input 
             id="password" 
             [(ngModel)]="newUserPWD" 
@@ -113,7 +82,7 @@
         <button type="submit" class="btn" [disabled]="registroForm.invalid">Registrarse</button>
       </form>
 
-      <!-- Mensajes de error o éxito -->
+       <!-- Mensajes de error o éxito -->
       <div *ngIf="flagError" class="error-message">
         {{ msjError }}
       </div>
@@ -122,4 +91,4 @@
       </div>
     </div>
   </div>
-</body>
+</body> 

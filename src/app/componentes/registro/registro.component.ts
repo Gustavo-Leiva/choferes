@@ -15,48 +15,39 @@ import { HeaderComponent } from "../header/header.component";
   styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
+  
+  // newUserNombre: string = '';
+  // newUserApellido: string = '';
+  // newUserEdad: number | null = null;
+
   newUserMail: string = '';
-  newUserNombre: string = '';
-  newUserApellido: string = '';
-  newUserEdad: number | null = null;
   newUserPWD: string = '';
+  flagError: boolean = false;
+  msjError: string = '';
+  msjExito: string = '';
   acceptedTerms: boolean = false;
 
   loggedUser: string = '';
-  flagError: boolean = false;
-  msjError: string = '';
-  msjExito: string = ''; // Para mostrar el mensaje de éxito
+
+ 
 
   constructor(public auth: Auth, private router: Router) {} // Inyectar Router
 
 
 
+ 
   Register() {
     this.flagError = false; // Reinicia el estado de error
   
     // Validaciones básicas
-    if (!this.newUserNombre || !this.newUserApellido || !this.newUserEdad || !this.newUserPWD) {
+    if (!this.newUserPWD) {
       this.flagError = true;
       this.msjError = 'Todos los campos son requeridos.';
       return;
     }
 
-    // Validación de nombre y apellido: Solo letras
-    const namePattern = /^[a-zA-Z]+$/;
-    if (!namePattern.test(this.newUserNombre)) {
-      this.flagError = true;
-      this.msjError = 'El nombre debe contener solo letras.';
-      return;
-    }
-
-  
-  
-    if (this.newUserEdad <= 0) {
-      this.flagError = true;
-      this.msjError = 'La edad debe ser válida.';
-      return;
-    }
-  
+    
+    
     if (this.newUserPWD.length < 6) {
       this.flagError = true;
       this.msjError = 'La contraseña debe tener al menos 6 caracteres.';
@@ -67,10 +58,7 @@ export class RegistroComponent {
     localStorage.setItem(
       'tempUser',
       JSON.stringify({
-        nombre: this.newUserNombre,
-        apellido: this.newUserApellido,
-        edad: this.newUserEdad,
-        password: this.newUserPWD
+             password: this.newUserPWD
       })
     );
   
@@ -81,6 +69,7 @@ export class RegistroComponent {
     }, 2000);
   }
   
+
 
 
 
