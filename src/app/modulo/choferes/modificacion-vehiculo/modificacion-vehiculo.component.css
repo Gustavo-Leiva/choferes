@@ -1,110 +1,129 @@
 /* Contenedor del formulario */
 .modificar-vehiculo-container {
-    background-color: #f4f4f4;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  /* Grupo de formularios */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  /* Etiquetas */
-  label {
-    font-size: 1.1em;
-    color: #333;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  /* Campos de entrada */
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: border-color 0.3s ease-in-out;
-  }
-  
-  .input-field:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-  }
-  
-  /* Estilos de error */
-  .error-msg {
-    color: #e74c3c;
-    font-size: 0.9em;
-    margin-top: 5px;
-  }
-  
-  /* Botón Crear */
-  .btn-guardar {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .btn-guardar:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .btn-guardar:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-  
-  .modificacion-vehiculo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0.2vh; /* Para centrar verticalmente */
-    font-size: 1.5rem; /* Tamaño de fuente más grande */
-    font-weight: bold; /* Negrita para resaltar */
-    color: #333; /* Color de texto moderno */
-    background-color: #f4f4f9; /* Fondo claro y elegante */
-    border: 2px solid #ccc; /* Borde sutil */
-    border-radius: 10px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Centrar el texto */
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 90%; /* Asegurar que el ancho se adapte a pantallas pequeñas */
 }
 
-  /* Estilos para el spinner */
-  .spinner-container {
-    position: fixed; /* Cubre toda la pantalla */
-    top: 0; /* Comienza desde la parte superior */
-    left: 0; /* Comienza desde la izquierda */
-    width: 100%; /* Ocupa el 100% del ancho */
-    height: 100%; /* Ocupa el 100% de la altura */
-    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    display: flex;
-    flex-direction: column; /* Coloca el texto encima del spinner */
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    z-index: 9999; /* Asegúrate de que esté por encima de todo */
-    pointer-events: none; /* Para evitar interferir con clics debajo si es necesario */
+/* Estilo para los contenedores de los formularios */
+.form-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Grupo de formularios */
+.form-group {
+  margin-bottom: 20px; /* Espacio inferior para separar los campos */
+  display: flex;
+  flex-direction: column; /* Asegura que el label y el input estén uno debajo del otro */
+  align-items: flex-start; /* Alinea los elementos al principio */
+}
+
+/* Etiquetas */
+label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilo para el select */
+.input-field {
+  width: 100%; /* El campo ocupará todo el ancho disponible */
+  padding: 10px; /* Espaciado dentro del campo */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de la fuente para el select */
+  color: #333; /* Color del texto */
+  background-color: #fff; /* Fondo blanco para el select */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos de error */
+.error-msg {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* Botón Crear */
+.btn-guardar {
+  width: 60%; 
+  padding: 8px 20px; /* Tamaño más pequeño */
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px; /* Bordes redondeados más sutiles */
+  font-size: 1rem; /* Fuente más pequeña */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 auto; /* Centra el botón horizontalmente */
+  display: block; /* Asegura que el botón sea un bloque para aplicar margin: auto */
+}
+
+.btn-guardar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-guardar:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.modificacion-vehiculo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0.2vh; /* Para centrar verticalmente */
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita para resaltar */
+  color: #333; /* Color de texto moderno */
+  background-color: #f4f4f9; /* Fondo claro y elegante */
+  border: 2px solid #ccc; /* Borde sutil */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrar el texto */
+}
+
+/* Estilos para el spinner */
+.spinner-container {
+  position: fixed; /* Cubre toda la pantalla */
+  top: 0; /* Comienza desde la parte superior */
+  left: 0; /* Comienza desde la izquierda */
+  width: 100%; /* Ocupa el 100% del ancho */
+  height: 100%; /* Ocupa el 100% de la altura */
+  background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  display: flex;
+  flex-direction: column; /* Coloca el texto encima del spinner */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  z-index: 9999; /* Asegúrate de que esté por encima de todo */
+  pointer-events: none; /* Para evitar interferir con clics debajo si es necesario */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
 }
 
 .loading-message {
-    font-size: 1.5rem; /* Tamaño de fuente */
-    color: #333; /* Color del texto */
-    margin-bottom: 10px; /* Espacio entre el mensaje y el spinner */
-    animation: fadeIn 1s ease-in-out; /* Animación suave */
-    text-align: center; /* Alinear el texto al centro */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  color: #333; /* Color del texto */
+  margin-bottom: 10px; /* Espacio entre el mensaje y el spinner */
+  animation: fadeIn 1s ease-in-out; /* Animación suave */
+  text-align: center; /* Alinear el texto al centro */
 }
 
 /* Estilos del spinner */
@@ -116,6 +135,7 @@
   height: 40px; /* Tamaño del spinner */
   animation: spin 1s linear infinite; /* Animación de rotación */
 }
+
 /* Contenedor del spinner */
 .spinner-overlay {
   position: fixed; /* Cubre toda la pantalla */
@@ -132,18 +152,18 @@
 
 /* Animación del mensaje */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Animación de rotación */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .confirmation-message {
@@ -181,4 +201,37 @@
 
 .close-button:hover {
   color: #ff4d4d; /* Cambia el color al pasar el cursor */
+}
+
+/* Estilo para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .modificacion-vehiculo {
+    font-size: 1.3rem; /* Ajustar el título */
+    padding: 15px;
+  }
+
+  .modificar-vehiculo-container {
+    padding: 20px; /* Reducir padding en dispositivos pequeños */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-field {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .btn-guardar {
+    display: block; /* Hace que el botón se comporte como un bloque */
+    width: 60%; /* El botón ocupará el 60% del contenedor */
+    padding: 12px 30px; /* Espaciado dentro del botón */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    font-weight: 600; /* Negrita para resaltar el texto */
+    background-color: #2980b9; /* Color moderno */
+    border-radius: 6px; /* Bordes más suaves */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+  }
+
+  .btn-guardar:hover {
+    background-color: #1c5e8d;
+  }
 }

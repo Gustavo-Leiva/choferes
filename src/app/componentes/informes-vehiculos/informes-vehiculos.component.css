@@ -1,91 +1,114 @@
+/* Contenedor principal */
 .contenedor {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .contenedor-botones {
-    display: flex;
-    gap: 10px; /* Espaciado entre botones */
-  }
-  
-  .btn-generar {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .btn-generar:hover {
-    background-color: #0056b3;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor de botones */
+.contenedor-botones {
+  display: flex;
+  gap: 10px; /* Espaciado entre botones */
+  justify-content: center; /* Alinear los botones en el centro */
+  flex-wrap: wrap; /* Los botones se apilarán en pantallas pequeñas */
+}
+
+/* Botones */
+.btn-generar {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-generar:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Tabla */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto; /* Hacer la tabla desplazable en pantallas pequeñas */
+  display: block;
+}
+
+.tabla thead tr {
+  background-color: #f4f4f4;
+  color: #333333;
+  text-align: left;
+  font-weight: bold;
+}
+
+.tabla th, .tabla td {
+  padding: 12px;
+  border: 1px solid #dddddd;
+}
+
+.tabla tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.tabla td {
+  color: #555555;
+}
+
+.tabla th {
+  color: #666666;
+  font-size: 1rem;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 15px;
+    max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
   }
 
-  
-  h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: #333333;
-    margin-bottom: 20px;
-  }
-  
-  .btn-generar {
-    display: block;
-    margin: 0 auto 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-generar:hover {
-    background-color: #45a049;
-  }
-  
   .tabla {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    font-size: 0.9rem; /* Reducir tamaño de fuente para pantallas pequeñas */
   }
-  
-  .tabla thead tr {
-    background-color: #f4f4f4;
-    color: #333333;
-    text-align: left;
-    font-weight: bold;
+
+  /* Botones más pequeños y apilados en pantallas pequeñas */
+  .contenedor-botones {
+    flex-direction: column; /* Apilar los botones */
+    gap: 15px; /* Espaciado entre los botones apilados */
   }
-  
+
+  .btn-generar {
+    width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
+    padding: 12px; /* Aumentar el padding para hacer los botones más clicables */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Reducir el tamaño del título en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustar el tamaño de la tabla para pantallas muy pequeñas */
   .tabla th, .tabla td {
-    padding: 12px;
-    border: 1px solid #dddddd;
+    font-size: 0.8rem; /* Reducir el tamaño de fuente */
+    padding: 8px; /* Reducir padding */
   }
-  
-  .tabla tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .tabla tbody tr:hover {
-    background-color: #f1f1f1;
-    transition: background-color 0.3s ease;
-  }
-  
-  .tabla td {
-    color: #555555;
-  }
-  
-  .tabla th {
-    color: #666666;
-    font-size: 1rem;
-  }
-  
+}

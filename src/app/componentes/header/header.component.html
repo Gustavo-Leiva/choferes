@@ -1,43 +1,78 @@
-<nav class="navbar">
-    <!-- Sección izquierda de la barra de navegación -->
-    <div class="navbar-left">
-        <!-- Logo o Título -->
-        <span class="navbar-title">Gestión de Choferes</span>
+<!-- Menú superior (Navbar) -->
+<nav class="navbar" [ngClass]="{ open: menuOpen }">
+  <!-- Icono de menú hamburguesa -->
+  <div class="navbar-toggle" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <div class="navbar-left">
+    <span class="navbar-title">Gestión de Choferes</span>
+  </div>
+
+  <div class="navbar-center">
+    <a href="/bienvenida" class="nav-link">Home</a>
+
+    <!-- Dropdown Choferes -->
+    <div class="dropdown" [ngClass]="{ open: isChoferesOpen }">
+      <button class="dropdown-toggle" (click)="toggleDropdown('choferes'); $event.stopPropagation()">
+        Choferes
+      </button>
+      <div class="dropdown-menu">
+        <a (click)="NavegarChoferes('alta-chofer')" class="dropdown-item">Alta Choferes</a>
+        <a (click)="NavegarChoferes('chofer-pais')" class="dropdown-item">Listar Choferes</a>
+      </div>
     </div>
 
-    <!-- Menú principal visible en pantallas grandes -->
-    <div class="navbar-center">
-        <a href="/bienvenida" class="nav-link">Home</a>
-        <div class="dropdown">
-            <button class="dropdown-toggle">Choferes</button>
-            <div class="dropdown-menu">
-                <a (click)="NavegarChoferes('alta-chofer')" class="dropdown-item">Alta Choferes</a>
-                <a (click)="NavegarChoferes('chofer-pais')" class="dropdown-item">Listar Choferes</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button *ngIf="authService.isAdmin()" class="dropdown-toggle">Vehículos</button>
-            <div class="dropdown-menu">
-                <a (click)="NavegarChoferes('vehiculos')" class="dropdown-item">Listar Vehículos</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button *ngIf="authService.isAdmin()" class="dropdown-toggle">Informes</button>
-            <div class="dropdown-menu">
-                <a href="/informes-vehiculos" class="dropdown-item">Informe Vehículos</a>
-            </div>
-        </div>
+    <!-- Dropdown Vehículos -->
+    <div class="dropdown" [ngClass]="{ open: isVehiculosOpen }">
+      <button *ngIf="authService.isAdmin()" class="dropdown-toggle" (click)="toggleDropdown('vehiculos'); $event.stopPropagation()">
+        Vehículos
+      </button>
+      <div class="dropdown-menu">
+        <a (click)="NavegarChoferes('vehiculos')" class="dropdown-item">Listar Vehículos</a>
+      </div>
     </div>
 
-    <!-- Sección derecha de la barra de navegación -->
-    <div class="navbar-right">
-        <ng-container *ngIf="authService.userActive; else loggedOut">
-            <span class="user-email">{{ authService.userActive.email }}</span>
-            <a (click)="logout()" class="nav-link logout">Cerrar Sesión</a>
-        </ng-container>
-        <ng-template #loggedOut>
-            <a href="/login" class="nav-link">Iniciar Sesión</a>
-            <a href="/registro" class="nav-link">Registrarse</a>
-        </ng-template>
+    <!-- Dropdown Informes -->
+    <div class="dropdown" [ngClass]="{ open: isInformesOpen }">
+      <button *ngIf="authService.isAdmin()" class="dropdown-toggle" (click)="toggleDropdown('informes'); $event.stopPropagation()">
+        Informes
+      </button>
+      <div class="dropdown-menu">
+        <a href="/informes-vehiculos" class="dropdown-item">Informe Vehículos</a>
+      </div>
     </div>
+  </div>
+
+  <div class="navbar-right">
+    <ng-template #loggedOut>
+      <a href="/login" class="nav-link">Iniciar Sesión</a>
+      <a href="/registro" class="nav-link">Registrarse</a>
+    </ng-template>
+
+    <!-- Mostrar "Cerrar sesión" en el navbar para pantallas grandes -->
+    <ng-container *ngIf="authService.userActive; else loggedOut">
+      <span class="user-email">{{ authService.userActive.email }}</span>
+      <!-- Mostrar "Cerrar sesión" solo en el navbar para pantallas grandes -->
+      <a *ngIf="!menuOpen" (click)="logout()" class="nav-link logout">Cerrar Sesión</a>
+    </ng-container>
+  </div>
 </nav>
+
+<!-- Menú lateral (Sidebar) -->
+<div class="sidebar" [ngClass]="{ open: menuOpen }">
+  <!-- Contenido del menú lateral -->
+  <ul class="sidebar-menu">
+    <li><a href="/bienvenida" class="nav-link">Inicio</a></li>
+    <li><a href="/choferes/alta-chofer" class="nav-link">Alta Choferes</a></li>
+    <li><a href="/choferes/chofer-pais" class="nav-link">Listar Choferes</a></li>
+    <li *ngIf="authService.isAdmin()"><a (click)="NavegarChoferes('vehiculos')" class="nav-link">Listar Vehículos</a></li>
+    <li *ngIf="authService.isAdmin()"><a href="/informes-vehiculos" class="nav-link">Informe Vehículos</a></li>
+    <!-- Mostrar "Cerrar sesión" solo en el sidebar en pantallas pequeñas -->
+    <li *ngIf="authService.userActive">
+      <a href="#" (click)="logout()" class="nav-link logout">Cerrar Sesión</a>
+    </li>
+  </ul>
+</div>

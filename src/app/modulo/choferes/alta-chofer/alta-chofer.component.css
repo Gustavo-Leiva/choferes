@@ -1,82 +1,49 @@
-/* estilos.css */
+/* Contenedor principal */
+.altas-choferes-container {
+  max-width: 600px; /* Limitar el ancho máximo */
+  margin: 40px auto; /* Centrar y margen superior */
+  padding: 25px; /* Más espaciado interno */
+  border-radius: 10px; /* Bordes más suaves */
+  background-color: #f4f6f9; /* Fondo elegante */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía moderna */
+}
 
-
-.button-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    padding: 10px;
-    border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .button-box:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al hacer hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .button-elem {
-    display: block;
-    width: 24px;
-    height: 24px;
-    margin: 0 12px;
-    transform: rotate(180deg);
-    fill: #ffffff;
-    transition: fill 0.3s ease, transform 0.3s ease;
-  }
-  
-  .button-elem:hover {
-    fill: #00bcd4;
-    transform: rotate(180deg) scale(1.1);
-  }
-  
-  
-  .altas-choferes-container {
-    max-width: 600px; /* Limitar ancho máximo */
-    margin: 40px auto; /* Centrar y margen superior */
-    padding: 25px; /* Más espaciado interno */
-    border-radius: 10px; /* Bordes más suaves */
-    background-color: #f4f6f9; /* Fondo elegante */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía moderna */
-  }
-
- h2 {
+/* Título */
+h2 {
   text-align: center; /* Centrar título */
   color: #333; /* Texto oscuro */
   margin-bottom: 20px; /* Espaciado inferior */
 }
-  
-.form-group {
-    margin-bottom: 20px; /* Más espaciado entre campos */
-  }
 
-  label {
-    display: block;
-    margin-bottom: 8px; /* Más espaciado */
-    font-weight: bold;
-    color: #444; /* Color oscuro */
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  select {
-      width: 100%;
-      max-width: 400px; /* Limitar el ancho máximo para todos los inputs */
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
-  }
-  
-  
+/* Formulario */
+.form-group {
+  margin-bottom: 20px; /* Más espaciado entre campos */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px; /* Más espaciado */
+  margin-left: 10px; /* Agregar margen izquierdo para separar de la parte izquierda */
+  font-weight: bold;
+  color: #444; /* Color oscuro */
+}
+
+/* Estilo de los inputs */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%; /* Hacer que los campos ocupen el 100% del ancho disponible */
+  max-width: 400px; /* Limitar el ancho máximo para todos los inputs */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
+  margin-left: 10px; /* Añadir separación entre el input y el borde izquierdo */
+}
+
 input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
@@ -85,140 +52,176 @@ select:focus {
   outline: none;
 }
 
+/* Botón de submit */
 button.submit-btn {
-    margin-top: 15px;
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    width: auto; /* Ajusta automáticamente el ancho según el contenido */
-    display: block;
-    margin: 0 auto; /* Centra el botón horizontalmente */
+  margin-top: 15px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: auto; /* Ajusta automáticamente el ancho según el contenido */
+  display: block;
+  margin: 0 auto; /* Centra el botón horizontalmente */
 }
 
 button.submit-btn:hover {
-    
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+/* Mensajes de error */
+.error-message {
+  font-size: 14px;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+.error {
+  color: red; /* Color de los mensajes de error */
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  margin-top: 5px; /* Espaciado superior */
+}
+
+/* Contenido del país seleccionado */
+.pais-seleccionado {
+  text-align: center;
+  margin-top: 20px; /* Espaciado superior */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #007bff; /* Borde azul */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #e9f5ff; /* Fondo claro */
+}
+
+.pais-seleccionado h3 {
+  text-align: center;
+  margin: 0 0 10px 0; /* Margen para el título */
+  color: #007bff; /* Color del título */
+}
+
+.pais-seleccionado img {
+  margin-top: 5px; /* Espaciado superior */
+  border-radius: 4px; /* Bordes redondeados para la imagen */
+}
+
+/* Mensaje de confirmación */
+.confirmation-message {
+  text-align: center;
+  font-size: 18px;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.confirmation-message p {
+  margin: 0; /* Eliminar márgenes del párrafo */
+}
+
+/* Overlay de la carga */
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #ffffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .altas-choferes-container {
+      padding: 15px;
+  }
+
+  h2 {
+      font-size: 1.6rem; /* Reducir tamaño del título */
+  }
+
+  /* Estilo de los inputs (más compactos) */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%; /* Hacer que los campos ocupen el 100% del ancho disponible */
+    max-width: 400px; /* Limitar el ancho máximo para todos los inputs */
+    padding: 8px; /* Reducir el padding */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Efecto de foco */
+    outline: none;
 }
 
 
+  button.submit-btn {
+      font-size: 14px; /* Reducir tamaño de texto del botón */
+      padding: 10px 15px;
+  }
+}
 
-  .error-message {
-    font-size: 14px;
-    color: #e74c3c;
-    margin-top: 5px;
-  }
-  
-  .error {
-    color: red; /* Color de los mensajes de error */
-    font-size: 0.9em; /* Tamaño de fuente más pequeño */
-    margin-top: 5px; /* Espaciado superior */
-  }
-  
-  button {
-   
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    padding: 10px 15px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de mano */
-    font-size: 1em; /* Tamaño de fuente */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
-  }
-  
-  .pais-seleccionado {
-    text-align: center;
-    margin-top: 20px; /* Espaciado superior */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #007bff; /* Borde azul */
-    border-radius: 4px; /* Bordes redondeados */
-    background-color: #e9f5ff; /* Fondo claro */
-  }
-  
-  .pais-seleccionado h3 {
-    text-align: center;
-    margin: 0 0 10px 0; /* Margen para el título */
-    color: #007bff; /* Color del título */
-  }
-  
-  .pais-seleccionado img {
-    margin-top: 5px; /* Espaciado superior */
-    border-radius: 4px; /* Bordes redondeados para la imagen */
-  }
-  
- 
-  
-  
-  .confirmation-message {
-    text-align: center;
-    font-size: 18px;
-    color: #28a745;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  .confirmation-message p {
-    margin: 0; /* Eliminar márgenes del párrafo */
-  }
-  
-  
-  
-  
-  
-  .spinner-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .spinner-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  .spinner {
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    border-top: 8px solid #ffffff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 480px) {
+  .altas-choferes-container {
+      padding: 10px;
   }
 
-
-
-
-@keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
+  h2 {
+      font-size: 1.4rem; /* Asegurarse de que el título se ajuste */
   }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .altas-choferes-container {
-      padding: 15px;
-    }
-  
-    button.submit-btn {
-        margin-top: 5px;
-      font-size: 14px; /* Reducir tamaño de texto */
-    }
+
+  /* Estilo de los inputs (más compactos) */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%; /* Hacer que los campos ocupen el 100% del ancho disponible */
+    max-width: 400px; /* Limitar el ancho máximo para todos los inputs */
+    padding: 8px; /* Reducir el padding */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Efecto de foco */
+    outline: none;
+}
+
+
+  button.submit-btn {
+      font-size: 14px; /* Ajuste de tamaño del botón */
+      padding: 12px 18px; /* Ajuste de padding */
   }
+}

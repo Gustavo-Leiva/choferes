@@ -19,8 +19,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   usuario! : string;
   imagen! : string;
   cantidadRepos! : string;
-  isMenuOpen: boolean = false; // Variable para controlar el estado del menú
-
+  menuOpen: boolean = false; // Variable para controlar el estado del menú
+  isChoferesOpen = false;
+  isVehiculosOpen = false;
+  isInformesOpen = false; // Control para desplegar el menú de choferes al hacer clic
  
    constructor(public authService: AuthService, private gitServ: GithubService, private router: Router) {}
 
@@ -32,14 +34,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.cantidadRepos = respuesta.public_repos;
       });
 
-     
-    
+         
     }
 
     toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen; // Alterna entre abrir/cerrar el menú
+      this.menuOpen = !this.menuOpen;
     }
-  
+
+    // Método para alternar la visibilidad de los dropdowns
+  toggleDropdown(menu: string) {
+    // Cerrar todos los menús y abrir solo el que corresponde
+    this.isChoferesOpen = menu === 'choferes' ? !this.isChoferesOpen : false;
+    this.isVehiculosOpen = menu === 'vehiculos' ? !this.isVehiculosOpen : false;
+    this.isInformesOpen = menu === 'informes' ? !this.isInformesOpen : false;
+  }
+
+   
     ngOnDestroy() {
       this.subsDatos.unsubscribe();
     }
@@ -59,15 +69,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   }
 
-
-  // InformesChoferes(ruta : string){
-  //   if(this.authService.getUser() != null){
-  //      this.router.navigate([`/choferes/${ruta}`]);
-  //   }else{
-  //     this.router.navigateByUrl("login")
-  //   }
-
-  // }
 
   InformesVehiculos(ruta : string){
     if(this.authService.getUser() != null){

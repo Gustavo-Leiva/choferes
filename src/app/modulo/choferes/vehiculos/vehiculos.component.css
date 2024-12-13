@@ -61,18 +61,19 @@
 /* Contenedor de alta, modificación y baja en columnas uno al lado del otro */
 .acciones-vehiculo {
   display: flex;
+  flex-direction: row; /* Por defecto, las secciones estarán en fila */
   justify-content: space-between;
   gap: 20px;
 }
 
-/* Estilos individuales para cada sección (alta, modificación, baja) */
+
+/* Estilos individuales para cada sección */
 .alta, .modificacion, .baja {
-  flex: 1;
+  flex: 1; /* Cada sección ocupa el mismo espacio */
   background-color: #f4f4f4;
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  max-width: 30%;
 }
 
 /* Asegura que todo sea responsive */
@@ -80,6 +81,13 @@
   .acciones-vehiculo {
     flex-direction: column;
   }
+
+  .alta, .modificacion, .baja {
+    width: 90%; /* Cada sección ocupa todo el ancho */
+    margin: 0 auto; /* Centra las secciones horizontalmente */
+  }
+
+
 }
 
   

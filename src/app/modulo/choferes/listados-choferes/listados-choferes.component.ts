@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ChoferService } from '../../../services/chofer.service';
 import { Chofer } from '../../../models/chofer';
+import { HeaderComponent } from '../../../componentes/header/header.component';
 
 @Component({
   selector: 'app-listados-choferes',

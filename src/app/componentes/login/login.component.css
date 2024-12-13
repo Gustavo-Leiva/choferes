@@ -1,179 +1,201 @@
 /* Estilos globales */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Comic Sans MS', sans-serif; 
-    background-color: #fdf6e3; /* Blanco cálido */
-    background-color: #f5f5f5; /* Gris muy claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #fdf6e3; /* Blanco cálido */
+  background-color: #f5f5f5; /* Gris muy claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Mantiene la altura completa de la pantalla */
+}
+
+/* Contenedor del login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 14rem;
+}
+
+/* Caja de login */
+.login-box {
+  background-color: #fce4ec; /* Fondo rosa suave */
+  padding: 40px;
+  padding-top: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  max-height: 100vh;
+  overflow-y: auto;
+  border: 3px solid #ff9800;
+  animation: slideDown 1s ease-out;
+  box-sizing: border-box;
+}
+
+/* Mensaje de error */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Título con estilo de juego */
+h1 {
+  text-align: center;
+  margin-top: 0.2rem;
+  font-size: 2.5rem;
+  color: #ff5722;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  word-wrap: break-word;
+}
+
+/* Texto descriptivo */
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Estilos del formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ff9800;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff5722;
+}
+
+/* Estilos de botones */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 0.5rem;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #e65100;
+}
+
+/* Animación de deslizamiento desde arriba */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  
-  /* Contenedor del login */
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para el spinner */
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
   .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    padding: 20px; /* Añade un pequeño relleno para evitar el desbordamiento */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho/alto */
-    padding-top: 14rem;
+    padding-top: 10rem;
   }
-  
-  /* Caja de login */
-  .login-box {    
-    background-color: #fce4ec; /* Fondo rosa suave*/
-    padding:  40px;
-    padding-top: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
-    width: 100%;
-    max-width: 400px;
-    max-height: 100vh; /* Limita la altura máxima para evitar desbordamiento */
-    overflow-y: auto; /* Añade scroll si el contenido es muy alto */
-    border: 3px solid #ff9800; /* Borde naranja vibrante */
-    animation: slideDown 1s ease-out;
-    box-sizing: border-box; /* Incluye el padding y borde en el cálculo del ancho/alto */
+  .login-box {
+    padding: 20px;
+    max-width: 100%;
+    box-shadow: none;
   }
-  
-  /* Mensaje de error */
-  .error-message {
-    background-color: #f8d7da; /* Fondo rojo claro */
-    color: #721c24; /* Texto rojo oscuro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-    text-align: center;
-    font-size: 0.9rem;
-    max-width: 100%; /* Asegura que el mensaje no se desborde */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
-  }
-  
-  /* Título con estilo de juego */
+
   h1 {
-    text-align: center;
-    margin-top:0.2rem;
-    /* margin-bottom: 10px; */
-    font-size: 2.5rem;
-    color: #ff5722;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px;
-    word-wrap: break-word; /* Evita que el texto se desborde en palabras largas */
+    font-size: 2rem;
   }
-  
-  /* Texto descriptivo */
+
   p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 1.1rem; /* Un poco más grande para una mejor legibilidad */
-  }
-  
-  /* Estilos del formulario */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
     font-size: 1rem;
-    color: #333;
   }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #ff9800; /* Borde a juego con el diseño */
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #ff5722; /* Cambio de color al enfocar */
-  }
-  
-  /* Estilos de  */
+
   .btn {
-    
-    width: 100%;
-    padding: 12px;
-    margin-top: 0.5rem;
-    background-color: #ff9800; /* Naranja vibrante */
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 10px;
   }
-  
-  .btn:hover {
-    background-color: #e65100; /* Naranja más oscuro al pasar el ratón */
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding-top: 5rem;
   }
-  
-  
-  /* Animación de deslizamiento desde arriba */
-  @keyframes slideDown {
-    from {
-      transform: translateY(-100%); /* Empieza fuera de la pantalla arriba */
-      opacity: 0; /* Inicialmente invisible */
-    }
-    to {
-      transform: translateY(0); /* Termina en su posición original */
-      opacity: 1; /* Finalmente visible */
-    }
+
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  
-  
-  /* Estilos para el spinner */
-  
-  .spinner-container {
-    position: fixed; /* Cambiado a fixed para cubrir toda la pantalla */
-    top: 0; /* Asegura que empiece desde la parte superior */
-    left: 0; /* Asegura que empiece desde la izquierda */
-    width: 100%; /* Ocupa el 100% del ancho */
-    height: 100%; /* Ocupa el 100% de la altura */
-    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para dar efecto de carga */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Asegúrate de que esté por encima de todo */
+
+  p {
+    font-size: 0.9rem;
   }
-  
-  .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1); /* Fondo del spinner */
-    border-top: 4px solid #3498db; /* Color del borde superior */
-    border-radius: 50%; /* Hacerlo circular */
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite; /* Animación de giro */
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /*---------------------------------------------------------------------*/
-  
-  /* Estilos responsivos */
-  @media (max-width: 600px) {
-    .login-box {
-      padding: 20px;
-      max-width: 100%;
-      box-shadow: none;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  }
+}
+
   

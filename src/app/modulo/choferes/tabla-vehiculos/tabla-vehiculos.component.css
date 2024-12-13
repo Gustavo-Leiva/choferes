@@ -1,75 +1,158 @@
 /* Estilo para el título */
 .titulo-listado {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* Estilo para la tabla */
+.table-vehiculos {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1.1em;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado de la tabla */
+.table-vehiculos thead tr {
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table-vehiculos thead th {
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+/* Cuerpo de la tabla */
+.table-vehiculos tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-vehiculos tbody tr:nth-of-type(even) {
+  background-color: #f4f4f4;
+}
+
+.table-vehiculos tbody tr:last-of-type {
+  border-bottom: 2px solid #007bff;
+}
+
+/* Celdas del cuerpo de la tabla */
+.table-vehiculos tbody td {
+  padding: 15px 20px;
+  color: #555;
+}
+
+/* Hover en filas */
+.table-vehiculos tbody tr:hover {
+  background-color: #eaf2fd;
+  cursor: pointer;
+}
+
+/* Mensaje cuando no hay vehículos */
+.no-vehiculos p {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #666;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  /* Título más pequeño en pantallas móviles */
+  .titulo-listado {
+    font-size: 1.5em;
   }
-  
-  /* Estilo para la tabla */
+
+  /* Ajuste de fuente y márgenes de la tabla */
   .table-vehiculos {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1.1em;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Encabezado de la tabla */
-  .table-vehiculos thead tr {
-    background-color: #007bff;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  .table-vehiculos thead th {
-    padding: 15px 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     font-size: 0.9em;
+    margin: 15px 0;
   }
-  
-  /* Cuerpo de la tabla */
-  .table-vehiculos tbody tr {
-    border-bottom: 1px solid #dddddd;
+
+  .table-vehiculos thead th {
+    padding: 10px 15px;
+    font-size: 0.8em;
   }
-  
-  .table-vehiculos tbody tr:nth-of-type(even) {
-    background-color: #f4f4f4;
-  }
-  
-  .table-vehiculos tbody tr:last-of-type {
-    border-bottom: 2px solid #007bff;
-  }
-  
-  /* Celdas del cuerpo de la tabla */
+
   .table-vehiculos tbody td {
-    padding: 15px 20px;
-    color: #555;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    text-align: center; /* Centra el contenido de las celdas del cuerpo */
   }
-  
-  /* Hover en filas */
-  .table-vehiculos tbody tr:hover {
-    background-color: #eaf2fd;
-    cursor: pointer;
+
+  /* Mostrar tabla desplazable en pantallas pequeñas */
+  .table-vehiculos {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-  
-  /* Mensaje cuando no hay vehículos */
+
+  /* Mensaje de "No vehículos" más compacto */
   .no-vehiculos p {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2em;
-    color: #666;
-    background-color: #f8f9fa;
-    border-radius: 5px;
+    font-size: 1em;
+    padding: 15px;
   }
-  
-  
+}
+
+@media (max-width: 480px) {
+  /* Ajustes adicionales para pantallas muy pequeñas */
+  .titulo-listado {
+    font-size: 1.2em;
+  }
+
+  /* Ajuste de padding y tamaño de fuente en la tabla */
+  .table-vehiculos thead th,
+  .table-vehiculos tbody td {
+    padding: 8px 10px;
+    font-size: 0.8em;
+  }
+
+  /* Para mejorar la legibilidad en pantallas pequeñas, reducimos la altura de las filas */
+  .table-vehiculos tbody td {
+    padding: 8px 10px;
+  }
+
+  /* Asegurarse de que los datos de la tabla se vean bien en pantallas más pequeñas */
+  .table-vehiculos tbody tr {
+    font-size: 0.8em;
+  }
+}
+
+/* En pantallas muy pequeñas (por debajo de 375px) */
+@media (max-width: 375px) {
+  /* Ajustes para pantallas muy pequeñas */
+  .titulo-listado {
+    font-size: 1.1em; /* Título más pequeño */
+  }
+
+  .table-vehiculos {
+    font-size: 0.75em; /* Reducir el tamaño de fuente de la tabla */
+  }
+
+  .table-vehiculos thead th,
+  .table-vehiculos tbody td {
+    padding: 6px 8px;
+  }
+
+  /* Mostrar las celdas de manera más compacta */
+  .table-vehiculos tbody td {
+    word-wrap: break-word;
+    white-space: normal;
+  }
+}
